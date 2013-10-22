@@ -15,7 +15,7 @@ then
         echo "Error,dir ${TARGET_PATH} has bean exist!"
         exit 1;
     fi
-    cp -a tpl/* ${TARGET_PATH}
+    cp -a `dirname $0`/tpl/* ${TARGET_PATH}
     cd ${TARGET_PATH}
     sed -i "s/@app.name@/${APP_NAME}/g" conf/wrapper.conf
     sed -i "s/@app.name@/${APP_NAME}/g" bin/tomcat
